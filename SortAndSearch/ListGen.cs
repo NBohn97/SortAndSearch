@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace SortThisShit
+namespace SortAndSearch
 {
-    public class ListGen
+    public static class ListGen
     {
         
         // Creates a List filled with n distinct random (unsorted) values
@@ -33,13 +33,31 @@ namespace SortThisShit
 
             return numberlist;
         }
+
+        public static List<int> CreateSortedNumberList()
+        {
+            var numberlist = new List<int>();
+
+            Console.WriteLine("Enter amount of numbers");
+            var amount = int.Parse(Console.ReadLine());
+
+            // Fill List
+            for (var i = 0; i < amount; i++) numberlist.Add(i);
+
+            return numberlist;
+        }
         
         
         
         
         
         
-        
+        /* Examples:
+         * Create A File with random distinct numbers: CreateRandomNumberFile(CreateFile(AssignPath()))
+         * Create A File with sorted distinct numbers: CreateNumberFileDistinct(CreateFile(AssignPath()))
+         * Create A List with random distinct numbers: CreateRandomNumberList()
+         * Create A List with sorted distinct numbers:
+         */
         
         
         
@@ -67,10 +85,17 @@ namespace SortThisShit
         // takes Stream and writes ascending distinct numbers there
         public static void CreateNumberFileDistinct(StreamWriter stream)
         {
+            /*
             Console.WriteLine("Enter amount of numbers");
             var amount = int.Parse(Console.ReadLine());
 
             for (var i = 0; i <= amount; i++) stream.WriteLine(i);
+            */
+            
+            var sortedNumberlist = CreateSortedNumberList();
+            foreach (var number in sortedNumberlist) stream.WriteLine(number);
+            
+            
             stream.Close();
         }
         
@@ -78,9 +103,9 @@ namespace SortThisShit
         // Takes Stream and writes random distinct numbers there
         public static void CreateRandomNumberFile(StreamWriter stream)
         {
-            var numberlist = CreateRandomNumberList();
+            var randomNumberList = CreateRandomNumberList();
 
-            foreach (var number in numberlist) stream.WriteLine(number);
+            foreach (var number in randomNumberList) stream.WriteLine(number);
 
             stream.Close();
         }
@@ -123,6 +148,7 @@ namespace SortThisShit
                 Console.Write(num);
                 Console.Write("|");
             }
+            Console.Write("\n");
         }
         
     }

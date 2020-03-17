@@ -1,4 +1,4 @@
-﻿namespace SortThisShit
+﻿namespace SortAndSearch
 {
     public class Searching
     {

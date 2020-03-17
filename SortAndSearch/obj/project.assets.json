@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Solutions\\SortThisShit\\SortThisShit\\SortThisShit.csproj",
-      "projectName": "SortThisShit",
-      "projectPath": "C:\\Solutions\\SortThisShit\\SortThisShit\\SortThisShit.csproj",
+      "projectUniqueName": "C:\\Solutions\\SortThisShit\\SortAndSearch\\SortAndSearch.csproj",
+      "projectName": "SortAndSearch",
+      "projectPath": "C:\\Solutions\\SortThisShit\\SortAndSearch\\SortAndSearch.csproj",
       "packagesPath": "C:\\Users\\nbohn\\.nuget\\packages\\",
-      "outputPath": "C:\\Solutions\\SortThisShit\\SortThisShit\\obj\\",
+      "outputPath": "C:\\Solutions\\SortThisShit\\SortAndSearch\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nbohn\\AppData\\Roaming\\NuGet\\NuGet.Config"

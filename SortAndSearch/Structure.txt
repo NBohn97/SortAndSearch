@@ -28,10 +28,12 @@ Searching
 
 
 ListGeneration
-    Return a Sorted List with n values 
+
+    // All are currently distinct only because of RandomListGeneration func used
+    Return a Sorted List with n values *
     Return a Random List with n values *
     
-    Create a text with n sorted values * // only ascending distinct by now
+    Create a text with n sorted values *
     Create a text with n unsorted values *
     
     PrintList

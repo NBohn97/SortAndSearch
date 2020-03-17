@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SortThisShit
+namespace SortAndSearch
 {
-    public class Sorting
+    public static class Sorting
     {
         
         // Takes List and checks if sorted
@@ -16,7 +16,7 @@ namespace SortThisShit
         }
         
         // Uses Bubble Sort to sort a List
-        public List<int> BubbleSort(List<int> unsortedList)
+        public static List<int> BubbleSort(List<int> unsortedList)
         {
             var x = unsortedList.Count;
             for (var i = 0; i < x - 1; i++)
@@ -32,7 +32,7 @@ namespace SortThisShit
         }
         
         // Optimized Bubble Sort to sort a list
-        public List<int> BubbleSortOptimized(List<int> unsortedList)
+        public static List<int> BubbleSortOptimized(List<int> unsortedList)
         {
             var x = unsortedList.Count;
             bool swap;
