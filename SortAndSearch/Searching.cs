@@ -42,13 +42,12 @@ namespace SortAndSearch
         }
         
         
-        
+        // BinarySearch with Integers
         public static string BinarySearch(List<long> sortedList, long intSearchedFor)
         {
             int upperBound = sortedList.Count - 1;
             int lowerBound = 0;
             int location;
-            bool found = false;
 
             while (upperBound >= lowerBound)
             {
@@ -78,13 +77,12 @@ namespace SortAndSearch
             
         
 
-
+        // BinarySearch with Strings
         public static string BinarySearch(List<String> sortedList, string stringSearchedFor)
         {
             int upperBound = sortedList.Count - 1;
             int lowerBound = 0;
             int location;
-            bool found = false;
 
             while (upperBound >= lowerBound)
             {
@@ -110,7 +108,6 @@ namespace SortAndSearch
         }
         
         
-        
-        
     }
+    
 }
