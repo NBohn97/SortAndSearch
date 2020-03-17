@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace SortAndSearch
 {
@@ -185,7 +186,7 @@ namespace SortAndSearch
             var rand = new Random();
             var n = listCopy.Count;
 
-            var shuffled = 0;
+            BigInteger shuffled = 0;
 
             while (!IsSorted(listCopy))
             {
@@ -198,7 +199,7 @@ namespace SortAndSearch
                 }
 
                 ++shuffled;
-                if (shuffled % 1000 == 0)
+                if (shuffled % 100000 == 0)
                 {
                     Console.WriteLine($"Shuffled {shuffled} times.");
                 }
@@ -210,7 +211,32 @@ namespace SortAndSearch
             return listCopy;
         }
         
-        
+        public static List<long> BogoSortWithLogLight(List<long> unsortedList)
+        {
+            var listCopy = new List<long>(unsortedList);
+            var rand = new Random();
+            var n = listCopy.Count;
+
+            BigInteger shuffled = 0;
+
+            while (!IsSorted(listCopy))
+            {
+                for (var i = listCopy.Count - 1; i > 1; i--)
+                {
+                    var random = rand.Next(i + 1);
+                    var value = listCopy[random];
+                    listCopy[random] = listCopy[i];
+                    listCopy[i] = value;
+                }
+
+                ++shuffled;
+                
+            }
+            
+            Console.WriteLine($"Shuffled {shuffled} times.");
+            //Console.WriteLine(IsSorted(listCopy));
+            return listCopy;
+        }
         
         
         
