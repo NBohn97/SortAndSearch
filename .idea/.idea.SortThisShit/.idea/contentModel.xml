@@ -21,7 +21,6 @@
         <e p="SortAndSearch.csproj" t="IncludeRecursive" />
         <e p="Sorting.cs" t="Include" />
         <e p="SortString.txt" t="Include" />
-        <e p="Structure.txt" t="Include" />
         <e p="world-cities_csv.csv" t="Include" />
       </e>
       <e p="SortThisShit.sln" t="IncludeFlat" />

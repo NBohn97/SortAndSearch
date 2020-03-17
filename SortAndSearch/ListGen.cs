@@ -7,7 +7,6 @@ namespace SortAndSearch
 {
     public static class ListGen
     {
-        
         // Creates a List filled with n distinct random (unsorted) values
         // uses User input for amount of numbers
         public static List<long> CreateRandomNumberList()
@@ -15,12 +14,12 @@ namespace SortAndSearch
             var numberlist = new List<long>();
 
             Console.WriteLine("Enter amount of numbers in random List:");
-            var amount = GetInput(-2147483648,2147483647);
-            
+            var amount = GetInput(-2147483648, 2147483647);
+
             if (amount > 300000)
                 Console.WriteLine("You entered a pretty big number. Sorting might take a while...");
-            
-            
+
+
             // Fill List
             for (var i = 0; i < amount; i++) numberlist.Add(i);
 
@@ -44,45 +43,41 @@ namespace SortAndSearch
             var numberlist = new List<long>();
 
             Console.WriteLine("Enter amount of numbers in List");
-            var amount = GetInput(-2147483648,2147483647);
+            var amount = GetInput(-2147483648, 2147483647);
             // Fill List
             for (var i = 0; i < amount; i++) numberlist.Add(i);
 
             return numberlist;
         }
-        
+
         public static List<long> CreateSortedNumberListV2()
         {
             var numberlist = new List<long>();
 
             Console.WriteLine("Enter amount of numbers in List");
-            var amount = GetInput(-2147483648,2147483647);
+            var amount = GetInput(-2147483648, 2147483647);
             // Fill List
-            Random r = new Random();
-            int j = 0;
-            for (int i = 0; i < amount;i++)
+            var r = new Random();
+            var j = 0;
+            for (var i = 0; i < amount; i++)
             {
-                int rInt = r.Next(0, 10);
+                var rInt = r.Next(0, 10);
                 j = j + rInt;
                 numberlist.Add(j);
-
             }
+
             return numberlist;
         }
-        
-        
-        
-        
+
+
         /* Examples:
          * Create A File with random distinct numbers: CreateRandomNumberFile(CreateFile(AssignPath()))
          * Create A File with sorted distinct numbers: CreateNumberFileDistinct(CreateFile(AssignPath()))
          * Create A List with random distinct numbers: CreateRandomNumberList()
          * Create A List with sorted distinct numbers:
          */
-        
-        
-        
-        
+
+
         // Creates a path pointing to specified file name
         public static string AssignPath()
         {
@@ -93,7 +88,7 @@ namespace SortAndSearch
             return path;
         }
 
-        
+
         // Takes path and creates empty file at path
         public static StreamWriter CreateFile(string path)
         {
@@ -101,8 +96,8 @@ namespace SortAndSearch
             var stream = new StreamWriter(path, true) {AutoFlush = true};
             return stream;
         }
-        
-        
+
+
         // takes Stream and writes ascending distinct numbers there
         public static void CreateNumberFileDistinct(StreamWriter stream)
         {
@@ -112,15 +107,15 @@ namespace SortAndSearch
 
             for (var i = 0; i <= amount; i++) stream.WriteLine(i);
             */
-            
+
             var sortedNumberlist = CreateSortedNumberList();
             foreach (var number in sortedNumberlist) stream.WriteLine(number);
-            
-            
+
+
             stream.Close();
         }
-        
-        
+
+
         // Takes Stream and writes random distinct numbers there
         public static void CreateRandomNumberFile(StreamWriter stream)
         {
@@ -130,24 +125,8 @@ namespace SortAndSearch
 
             stream.Close();
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
         // Takes a path to a txt file and converts back to Int list
         public static List<long> TxtToIntList(string path)
         {
@@ -159,7 +138,7 @@ namespace SortAndSearch
 
             return numList;
         }
-        
+
         // Takes a path to a txt file and converts back to String list
         public static List<string> TxtToStringList(string path)
         {
@@ -171,8 +150,8 @@ namespace SortAndSearch
 
             return wordList;
         }
-        
-        
+
+
         // Prints list values to console
         public static void PrintList(List<long> list)
         {
@@ -181,9 +160,10 @@ namespace SortAndSearch
                 Console.Write(num);
                 Console.Write("|");
             }
+
             Console.Write("\n");
         }
-        
+
         public static void PrintStringList(List<string> list)
         {
             foreach (var num in list)
@@ -191,8 +171,8 @@ namespace SortAndSearch
                 Console.Write(num);
                 Console.Write("|");
             }
+
             Console.Write("\n");
         }
-        
     }
 }
