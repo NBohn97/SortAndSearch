@@ -34,7 +34,7 @@ namespace SortAndSearch
             {
                 if (word == stringSearchedFor)
                 {
-                    return $"String {stringSearchedFor} first found at index {index}";
+                    return $"{stringSearchedFor.ToUpper()} first found at index {index}";
                 }
                 ++index;
             }
@@ -69,7 +69,7 @@ namespace SortAndSearch
                 
             }
             
-            return $"{intSearchedFor} not found in List";
+            return $"Integer {intSearchedFor} not found in List";
   
                 
         }
