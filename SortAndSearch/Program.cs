@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using static SortAndSearch.ListGen;
 using static SortAndSearch.Sorting;
+using static SortAndSearch.Performance;
+using static SortAndSearch.Searching;
 
 namespace SortAndSearch
 {
@@ -10,6 +12,38 @@ namespace SortAndSearch
 
         static void Main(string[] args)
         {
+            
+            /* MAIN SORT
+            
+            // Generate a random List
+            Console.WriteLine("GENERATING RANDOM LIST:");
+            List<int> generatedRandomList = CreateRandomNumberList();
+            PrintList(generatedRandomList);
+            Console.WriteLine($"Is unsorted generated List sorted ?: {IsSorted(generatedRandomList)}\n");
+            
+            // Sort with BubbleSort
+            Console.WriteLine("BUBBLE SORT:");
+            var sortedBubble = ElapsedTimeSorting(BubbleSort,generatedRandomList);
+            PrintList(sortedBubble);
+            Console.WriteLine($"Is Bubble Sorted List sorted ?: {IsSorted(sortedBubble)}\n");
+
+            // Sort with BogoSort
+            Console.WriteLine("BOGO SORT:");
+            var sortedBogo = ElapsedTimeSorting(BogoSort, generatedRandomList);
+            PrintList(sortedBogo);
+            Console.WriteLine($"Is Bogo Sorted List sorted ?: {IsSorted(sortedBogo)}\n");
+
+            */
+            
+            Console.WriteLine("Which integer are you searching for? :");
+            int searchingFor = int.Parse(Console.ReadLine());
+            
+            var SortedForSearch = CreateSortedNumberList();
+            Console.WriteLine(ElapsedTimeSearching(SequentialSearch,SortedForSearch,searchingFor));
+            
+
+
+
 
 
 
@@ -41,15 +75,15 @@ namespace SortAndSearch
             
             */
 
-            
+
             /* Sample Generate Files with random and sorted values
              
             CreateRandomNumberFile(CreateFile(AssignPath()));
             CreateNumberFileDistinct(CreateFile(AssignPath()));
             
              */
-            
-            
+
+
         }
     }
 }
