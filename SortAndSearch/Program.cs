@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using static SortAndSearch.ListGen;
 using static SortAndSearch.Sorting;
 using static SortAndSearch.Performance;
@@ -134,8 +135,8 @@ namespace SortAndSearch
                         case 2:
                             Console.WriteLine("Which City are you searching for? (~ 3.2 million Cities) :");
                             string searchingForString = Console.ReadLine();
-                            // make path relative
-                            var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
+                            //var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
+                            var convList = TxtToStringList("..\\..\\..\\CitiesSorted.txt");
                             Console.WriteLine("Sequential Search:");
                             Console.WriteLine(ElapsedTimeSearchingString(SequentialSearch,convList,searchingForString));
                             Console.WriteLine(ElapsedTimeSearchingString(BinarySearch,convList,searchingForString));
