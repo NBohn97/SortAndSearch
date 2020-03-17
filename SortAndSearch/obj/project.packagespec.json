@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Solutions\\SortThisShit\\SortAndSearch\\SortAndSearch.csproj",
+    "projectUniqueName": "C:\\Solutions\\SortAndSearch\\SortAndSearch\\SortAndSearch.csproj",
     "projectName": "SortAndSearch",
-    "projectPath": "C:\\Solutions\\SortThisShit\\SortAndSearch\\SortAndSearch.csproj",
-    "outputPath": "C:\\Solutions\\SortThisShit\\SortAndSearch\\obj\\",
+    "projectPath": "C:\\Solutions\\SortAndSearch\\SortAndSearch\\SortAndSearch.csproj",
+    "outputPath": "C:\\Solutions\\SortAndSearch\\SortAndSearch\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
