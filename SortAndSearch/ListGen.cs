@@ -13,7 +13,7 @@ namespace SortAndSearch
         {
             var numberlist = new List<long>();
 
-            Console.WriteLine("Enter amount of numbers");
+            Console.WriteLine("Enter amount of numbers in random List:");
             var amount = long.Parse(Console.ReadLine());
 
             // Fill List
@@ -38,7 +38,7 @@ namespace SortAndSearch
         {
             var numberlist = new List<long>();
 
-            Console.WriteLine("Enter amount of numbers");
+            Console.WriteLine("Enter amount of numbers in List");
             var amount = long.Parse(Console.ReadLine());
 
             // Fill List
