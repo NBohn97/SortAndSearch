@@ -12,7 +12,7 @@ namespace SortAndSearch
             for (var i = 0; i < randList.Count - 1; i++)
                 if (randList[i] >= randList[i + 1])
                     return false;
-
+            
             return true;
         }
         
@@ -29,7 +29,8 @@ namespace SortAndSearch
                     listCopy[j] = listCopy[j + 1];
                     listCopy[j + 1] = temp;
                 }
-
+            
+            //Console.WriteLine(IsSorted(listCopy));
             return listCopy;
         }
         
@@ -53,9 +54,62 @@ namespace SortAndSearch
 
                 if (swap == false) break;
             }
-
+            
+            //Console.WriteLine(IsSorted(listCopy));
             return listCopy;
         }
+
+        
+        
+
+        public static List<long> SelectionSort(List<long> unsortedList)
+        {
+            var listCopy = new List<long>(unsortedList);
+            int n = listCopy.Count;
+
+            for (int j = n - 1; j > 0; j--)
+            {
+                int pos = 0;
+
+                for (int i = 0; i <= j; i++)
+                {
+                    if (listCopy[i] > listCopy[pos])
+                        pos = i;
+                }
+                var temp = listCopy[pos];
+                listCopy[pos] = listCopy[j];
+                listCopy[j] = temp;
+
+
+            }
+
+            //Console.WriteLine(IsSorted(listCopy));
+            return listCopy;
+
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         public static List<long> BogoSort(List<long> unsortedList)
         {
@@ -74,6 +128,7 @@ namespace SortAndSearch
                 
             }
             
+            //Console.WriteLine(IsSorted(listCopy));
             return listCopy;
         }
         
@@ -106,6 +161,7 @@ namespace SortAndSearch
             }
             
             Console.WriteLine($"Shuffled {shuffled} times.");
+            //Console.WriteLine(IsSorted(listCopy));
             return listCopy;
         }
         
