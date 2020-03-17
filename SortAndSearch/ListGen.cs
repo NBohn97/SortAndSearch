@@ -51,7 +51,24 @@ namespace SortAndSearch
             return numberlist;
         }
         
-        
+        public static List<long> CreateSortedNumberListV2()
+        {
+            var numberlist = new List<long>();
+
+            Console.WriteLine("Enter amount of numbers in List");
+            var amount = GetInput(-2147483648,2147483647);
+            // Fill List
+            Random r = new Random();
+            int j = 0;
+            for (int i = 0; i < amount;i++)
+            {
+                int rInt = r.Next(0, 10);
+                j = j + rInt;
+                numberlist.Add(j);
+
+            }
+            return numberlist;
+        }
         
         
         
