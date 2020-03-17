@@ -1,0 +1,11 @@
+C:\Solutions\SortThisShit\SortThisShit\bin\Debug\netcoreapp3.1\SortThisShit.exe
+C:\Solutions\SortThisShit\SortThisShit\bin\Debug\netcoreapp3.1\SortThisShit.deps.json
+C:\Solutions\SortThisShit\SortThisShit\bin\Debug\netcoreapp3.1\SortThisShit.runtimeconfig.json
+C:\Solutions\SortThisShit\SortThisShit\bin\Debug\netcoreapp3.1\SortThisShit.runtimeconfig.dev.json
+C:\Solutions\SortThisShit\SortThisShit\bin\Debug\netcoreapp3.1\SortThisShit.dll
+C:\Solutions\SortThisShit\SortThisShit\bin\Debug\netcoreapp3.1\SortThisShit.pdb
+C:\Solutions\SortThisShit\SortThisShit\obj\Debug\netcoreapp3.1\SortThisShit.csprojAssemblyReference.cache
+C:\Solutions\SortThisShit\SortThisShit\obj\Debug\netcoreapp3.1\SortThisShit.AssemblyInfoInputs.cache
+C:\Solutions\SortThisShit\SortThisShit\obj\Debug\netcoreapp3.1\SortThisShit.AssemblyInfo.cs
+C:\Solutions\SortThisShit\SortThisShit\obj\Debug\netcoreapp3.1\SortThisShit.dll
+C:\Solutions\SortThisShit\SortThisShit\obj\Debug\netcoreapp3.1\SortThisShit.pdb
