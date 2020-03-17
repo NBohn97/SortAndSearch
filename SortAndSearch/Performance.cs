@@ -8,18 +8,18 @@ namespace SortAndSearch
     {
 
         // Uses a Sort Function and A List as Input. Returns sorted List and returns time elapsed on function
-        public static List<int> ElapsedTimeSorting(Func<List<int>,List<int>> mySortFunction, List<int> x)
+        public static List<long> ElapsedTimeSorting(Func<List<long>,List<long>> mySortFunction, List<long> x)
         {
             
             var sw = new Stopwatch();
             sw.Start();
-            List<int> sortedList = mySortFunction(x);
+            List<long> sortedList = mySortFunction(x);
             sw.Stop();
             Console.WriteLine($"Time elapsed: {sw.Elapsed}");
             return sortedList;
         }
 
-        public static string ElapsedTimeSearching(Func<List<int>, int, string> mySearchFunction, List<int> sortedList, int searchingFor)
+        public static string ElapsedTimeSearching(Func<List<long>, long, string> mySearchFunction, List<long> sortedList, long searchingFor)
         {
             var sw = new Stopwatch();
             sw.Start();
@@ -29,6 +29,15 @@ namespace SortAndSearch
             return result;
         }
         
+        public static string ElapsedTimeSearchingString(Func<List<string>, string, string> mySearchFunction, List<string> sortedList, string searchingFor)
+        {
+            var sw = new Stopwatch();
+            sw.Start();
+            string result = mySearchFunction(sortedList,searchingFor);
+            sw.Stop();
+            Console.WriteLine($"Time elapsed: {sw.Elapsed}");
+            return result;
+        }
         
         
     }
