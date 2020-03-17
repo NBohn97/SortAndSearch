@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using static SortAndSearch.ListGen;
@@ -25,6 +26,7 @@ namespace SortAndSearch
                 Console.WriteLine("Restart? (y)es (n)o:");
                 string x = Console.ReadLine();
                 restart = x == "y" || x == "yes";
+                Console.Clear();
 
             }
             
@@ -67,7 +69,7 @@ namespace SortAndSearch
             {
                 case 1:
                     List<long> generatedRandomList = CreateRandomNumberList();
-                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("-------------------------------------");
                     Console.WriteLine("Choose Sorting Algorithm 1");
                     Console.WriteLine("(1) BubbleSort");
                     Console.WriteLine("(2) BubbleSort Optimized");
@@ -101,7 +103,7 @@ namespace SortAndSearch
                             Console.WriteLine("ERROR");
                             break;
                     }
-                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("-------------------------------------");
                     Console.WriteLine("Choose Sorting Algorithm 2");
                     Console.WriteLine("(1) BubbleSort");
                     Console.WriteLine("(2) BubbleSort Optimized");
@@ -151,18 +153,19 @@ namespace SortAndSearch
                 
                 case 2:
                     Console.WriteLine("Search Integers or String?");
-                    Console.WriteLine("(1) Integer ");
-                    Console.WriteLine("(2) String ");
-                    selection2 = GetInput(1,2);
+                    Console.WriteLine("(1) Integer");
+                    Console.WriteLine("(2) String");
+                    Console.WriteLine("(3) Integer (CONTAINS ALL INTEGERS IN RANGE)");
+                    selection2 = GetInput(1,3);
                     switch (selection2)
                     {
                         case 1:
                             // need to randomize ascending list from CreateSortedNumbersList();
-                            List<long> generatedList = CreateSortedNumberList();
+                            List<long> generatedList = CreateSortedNumberListV2();
                             Console.WriteLine("Enter Integer you are searching for");
                             int searchingFor = GetInput(-2147483648, 2147483647);
                             
-                            Console.WriteLine("------------------------------");
+                            Console.WriteLine("-------------------------------------");
                             Console.WriteLine("Sequential Search: ");
                             Console.WriteLine(ElapsedTimeSearching(SequentialSearch,generatedList,searchingFor));
                             Console.WriteLine("Binary Search: ");
@@ -172,10 +175,33 @@ namespace SortAndSearch
                             Console.WriteLine("Which City are you searching for? (~ 3.2 million Cities) :");
                             string searchingForString = Console.ReadLine().ToLower();
                             //var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
-                            var convList = TxtToStringList("..\\..\\..\\CitiesSorted.txt");
+
+                            
+                                //convList = TxtToStringList("..\\..\\..\\CitiesSorted.txt");
+
+                                string directory = AppDomain.CurrentDomain.BaseDirectory;
+                                List<string> convList = TxtToStringList(directory + "\\Data\\CitiesSorted.txt");
+
+                            
+                            
+                            Console.WriteLine("-------------------------------------");
                             Console.WriteLine("Sequential Search:");
                             Console.WriteLine(ElapsedTimeSearching(SequentialSearch,convList,searchingForString));
+                            Console.WriteLine("-------------------------------------");
+                            Console.WriteLine("Binary Search:");
                             Console.WriteLine(ElapsedTimeSearching(BinarySearch,convList,searchingForString));
+                            break;
+                        case 3:
+                            // need to randomize ascending list from CreateSortedNumbersList();
+                            List<long> generatedList2 = CreateSortedNumberList();
+                            Console.WriteLine("Enter Integer you are searching for");
+                            int searchingFor2 = GetInput(-2147483648, 2147483647);
+                            
+                            Console.WriteLine("-------------------------------------");
+                            Console.WriteLine("Sequential Search: ");
+                            Console.WriteLine(ElapsedTimeSearching(SequentialSearch,generatedList2,searchingFor2));
+                            Console.WriteLine("Binary Search: ");
+                            Console.WriteLine(ElapsedTimeSearching(BinarySearch,generatedList2,searchingFor2));
                             break;
                         default:
                             Console.WriteLine("ERROR");
