@@ -25,131 +25,14 @@ namespace SortAndSearch
                 restart = x == "y";
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /* SORT MAIN
             
-            // Generate a random List
-            Console.WriteLine("GENERATING RANDOM LIST:");
-            List<int> generatedRandomList = CreateRandomNumberList();
-            PrintList(generatedRandomList);
-            Console.WriteLine($"Is unsorted generated List sorted ?: {IsSorted(generatedRandomList)}\n");
-            
-            // Sort with BubbleSort
-            Console.WriteLine("BUBBLE SORT:");
-            var sortedBubble = ElapsedTimeSorting(BubbleSort,generatedRandomList);
-            PrintList(sortedBubble);
-            Console.WriteLine($"Is Bubble Sorted List sorted ?: {IsSorted(sortedBubble)}\n");
-
-            // Sort with BogoSort
-            Console.WriteLine("BOGO SORT:");
-            var sortedBogo = ElapsedTimeSorting(BogoSort, generatedRandomList);
-            PrintList(sortedBogo);
-            Console.WriteLine($"Is Bogo Sorted List sorted ?: {IsSorted(sortedBogo)}\n");
-
-            */
-
-
-
-            // SEARCH MAIN
-
-            /*
-            Console.WriteLine("Which integer are you searching for? :");
-            long searchingFor = long.Parse(Console.ReadLine());
-            
-            var SortedForSearch = CreateSortedNumberList();
-            Console.WriteLine(ElapsedTimeSearching(SequentialSearch,SortedForSearch,searchingFor));
-            */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*
-
-            // SEARCH CITY SORTED SEQUENTIAL STRING
-            Console.WriteLine("Which City are you searching for? :");
-            string searchingForString = Console.ReadLine();
-            
-            var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
-            Console.WriteLine(ElapsedTimeSearchingString(SequentialSearch,convList,searchingForString));
-            
-            // Search long list SEQUENTIAL
-            List<long> generatedList = CreateSortedNumberList();
-            PrintList(generatedList);
-            
-            Console.WriteLine(ElapsedTimeSearching(SequentialSearch,generatedList,50));
-
-            */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /* Sample Generate Random and Sorted List and test if sorted
-             
-            List<int> generatedRandomList = CreateRandomNumberList();
-            PrintList(generatedRandomList);
-
-            List<int> generatedList = CreateSortedNumberList();
-            PrintList(generatedList);
-
-            Console.WriteLine(IsSorted(generatedList) + "\n");
-            Console.WriteLine(IsSorted(generatedRandomList));
-            
-            */
-
-
             /* Sample Generate Files with random and sorted values
              
             CreateRandomNumberFile(CreateFile(AssignPath()));
             CreateNumberFileDistinct(CreateFile(AssignPath()));
             
              */
-
+            
 
         }
 
@@ -184,7 +67,6 @@ namespace SortAndSearch
             switch (selection1)
             {
                 case 1:
-                    Console.WriteLine("Enter Amount of Numbers in random List:");
                     List<long> generatedRandomList = CreateRandomNumberList();
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Choose Sorting Algorithm 1");
@@ -209,6 +91,7 @@ namespace SortAndSearch
                     Console.WriteLine("(1) BubbleSort");
                     Console.WriteLine("(2) BubbleSort Optimized");
                     Console.WriteLine("(3) BogoSort");
+                    Console.WriteLine("(4) BogoSort(LOG)");
                     selection2 = int.Parse(Console.ReadLine());
                     switch (selection2)
                     {
@@ -220,6 +103,9 @@ namespace SortAndSearch
                             break;
                         case 3:
                             var sortedBogoSort = ElapsedTimeSorting(BogoSort,generatedRandomList);
+                            break;
+                        case 4:
+                            var sortedBogoSortLog = ElapsedTimeSorting(BogoSortWithLog,generatedRandomList);
                             break;
                     }
 
@@ -246,7 +132,7 @@ namespace SortAndSearch
                             Console.WriteLine(ElapsedTimeSearching(BinarySearch,generatedList,searchingFor));
                             break;
                         case 2:
-                            Console.WriteLine("Which City are you searching for? :");
+                            Console.WriteLine("Which City are you searching for? (~ 3.2 million Cities) :");
                             string searchingForString = Console.ReadLine();
                             // make path relative
                             var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
@@ -255,20 +141,14 @@ namespace SortAndSearch
                             Console.WriteLine(ElapsedTimeSearchingString(BinarySearch,convList,searchingForString));
                             break;
                     }
-                    
                     break;
                 
             }
             
-    
-    
-    
+            
         }
         
     }
-    
-
-    
     
     
 }
