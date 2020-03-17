@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using static SortAndSearch.Program;
 
 namespace SortAndSearch
 {
@@ -14,8 +15,12 @@ namespace SortAndSearch
             var numberlist = new List<long>();
 
             Console.WriteLine("Enter amount of numbers in random List:");
-            var amount = long.Parse(Console.ReadLine());
-
+            var amount = GetInput(-2147483648,2147483647);
+            
+            if (amount > 300000)
+                Console.WriteLine("You entered a pretty big number. Sorting might take a while...");
+            
+            
             // Fill List
             for (var i = 0; i < amount; i++) numberlist.Add(i);
 
@@ -39,8 +44,7 @@ namespace SortAndSearch
             var numberlist = new List<long>();
 
             Console.WriteLine("Enter amount of numbers in List");
-            var amount = long.Parse(Console.ReadLine());
-
+            var amount = GetInput(-2147483648,2147483647);
             // Fill List
             for (var i = 0; i < amount; i++) numberlist.Add(i);
 
