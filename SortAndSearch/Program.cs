@@ -61,10 +61,7 @@ namespace SortAndSearch
         {
 
             int selection2;
-            int selection3;
-            string selectionSort1;
-            string selectionSort2;
-            
+
             switch (selection1)
             {
                 case 1:
@@ -74,25 +71,7 @@ namespace SortAndSearch
                     Console.WriteLine("(1) BubbleSort");
                     Console.WriteLine("(2) BubbleSort Optimized");
                     Console.WriteLine("(3) BogoSort");
-                    selection2 = int.Parse(Console.ReadLine());
-                    switch (selection2)
-                    {
-                        case 1:
-                            ElapsedTimeSorting(BubbleSort,generatedRandomList);
-                            break;
-                        case 2:
-                            ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
-                            break;
-                        case 3:
-                            ElapsedTimeSorting(BogoSort,generatedRandomList);
-                            break;
-                    }
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("Choose Sorting Algorithm 2");
-                    Console.WriteLine("(1) BubbleSort");
-                    Console.WriteLine("(2) BubbleSort Optimized");
-                    Console.WriteLine("(3) BogoSort");
-                    Console.WriteLine("(4) BogoSort(LOG)");
+                    Console.WriteLine("(4) SelectionSort");
                     selection2 = int.Parse(Console.ReadLine());
                     switch (selection2)
                     {
@@ -106,7 +85,39 @@ namespace SortAndSearch
                             ElapsedTimeSorting(BogoSort,generatedRandomList);
                             break;
                         case 4:
+                            ElapsedTimeSorting(SelectionSort,generatedRandomList);
+                            break;
+                        default:
+                            Console.WriteLine("ERROR");
+                            break;
+                    }
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Choose Sorting Algorithm 2");
+                    Console.WriteLine("(1) BubbleSort");
+                    Console.WriteLine("(2) BubbleSort Optimized");
+                    Console.WriteLine("(3) BogoSort");
+                    Console.WriteLine("(4) SelectionSort");
+                    Console.WriteLine("(9) BogoSort(LOG)");
+                    selection2 = int.Parse(Console.ReadLine());
+                    switch (selection2)
+                    {
+                        case 1:
+                            ElapsedTimeSorting(BubbleSort,generatedRandomList);
+                            break;
+                        case 2:
+                            ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
+                            break;
+                        case 3:
+                            ElapsedTimeSorting(BogoSort,generatedRandomList);
+                            break;
+                        case 4:
+                            ElapsedTimeSorting(SelectionSort,generatedRandomList);
+                            break;
+                        case 9:
                             ElapsedTimeSorting(BogoSortWithLog,generatedRandomList);
+                            break;
+                        default:
+                            Console.WriteLine("ERROR");
                             break;
                     }
 
@@ -140,6 +151,9 @@ namespace SortAndSearch
                             Console.WriteLine("Sequential Search:");
                             Console.WriteLine(ElapsedTimeSearchingString(SequentialSearch,convList,searchingForString));
                             Console.WriteLine(ElapsedTimeSearchingString(BinarySearch,convList,searchingForString));
+                            break;
+                        default:
+                            Console.WriteLine("ERROR");
                             break;
                     }
                     break;
