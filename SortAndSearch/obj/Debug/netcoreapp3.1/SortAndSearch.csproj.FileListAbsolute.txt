@@ -1,0 +1,11 @@
+C:\Solutions\SortThisShit\SortAndSearch\bin\Debug\netcoreapp3.1\SortAndSearch.exe
+C:\Solutions\SortThisShit\SortAndSearch\bin\Debug\netcoreapp3.1\SortAndSearch.deps.json
+C:\Solutions\SortThisShit\SortAndSearch\bin\Debug\netcoreapp3.1\SortAndSearch.runtimeconfig.json
+C:\Solutions\SortThisShit\SortAndSearch\bin\Debug\netcoreapp3.1\SortAndSearch.runtimeconfig.dev.json
+C:\Solutions\SortThisShit\SortAndSearch\bin\Debug\netcoreapp3.1\SortAndSearch.dll
+C:\Solutions\SortThisShit\SortAndSearch\bin\Debug\netcoreapp3.1\SortAndSearch.pdb
+C:\Solutions\SortThisShit\SortAndSearch\obj\Debug\netcoreapp3.1\SortAndSearch.csprojAssemblyReference.cache
+C:\Solutions\SortThisShit\SortAndSearch\obj\Debug\netcoreapp3.1\SortAndSearch.AssemblyInfoInputs.cache
+C:\Solutions\SortThisShit\SortAndSearch\obj\Debug\netcoreapp3.1\SortAndSearch.AssemblyInfo.cs
+C:\Solutions\SortThisShit\SortAndSearch\obj\Debug\netcoreapp3.1\SortAndSearch.dll
+C:\Solutions\SortThisShit\SortAndSearch\obj\Debug\netcoreapp3.1\SortAndSearch.pdb
