@@ -78,13 +78,13 @@ namespace SortAndSearch
                     switch (selection2)
                     {
                         case 1:
-                            var sortedBubble = ElapsedTimeSorting(BubbleSort,generatedRandomList);
+                            ElapsedTimeSorting(BubbleSort,generatedRandomList);
                             break;
                         case 2:
-                            var sortedBubbleOptimized = ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
+                            ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
                             break;
                         case 3:
-                            var sortedBogoSort = ElapsedTimeSorting(BogoSort,generatedRandomList);
+                            ElapsedTimeSorting(BogoSort,generatedRandomList);
                             break;
                     }
                     Console.WriteLine("------------------------------");
@@ -97,16 +97,16 @@ namespace SortAndSearch
                     switch (selection2)
                     {
                         case 1:
-                            var sortedBubble = ElapsedTimeSorting(BubbleSort,generatedRandomList);
+                            ElapsedTimeSorting(BubbleSort,generatedRandomList);
                             break;
                         case 2:
-                            var sortedBubbleOptimized = ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
+                            ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
                             break;
                         case 3:
-                            var sortedBogoSort = ElapsedTimeSorting(BogoSort,generatedRandomList);
+                            ElapsedTimeSorting(BogoSort,generatedRandomList);
                             break;
                         case 4:
-                            var sortedBogoSortLog = ElapsedTimeSorting(BogoSortWithLog,generatedRandomList);
+                            ElapsedTimeSorting(BogoSortWithLog,generatedRandomList);
                             break;
                     }
 
