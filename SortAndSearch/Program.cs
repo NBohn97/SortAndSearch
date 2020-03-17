@@ -13,7 +13,7 @@ namespace SortAndSearch
         static void Main(string[] args)
         {
             
-            /* MAIN SORT
+            /* SORT MAIN
             
             // Generate a random List
             Console.WriteLine("GENERATING RANDOM LIST:");
@@ -35,13 +35,38 @@ namespace SortAndSearch
 
             */
             
+            
+            // SORT STRING LIST
+
+            var sortedList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\SortString.txt");
+            PrintStringList(BubbleSortOptimizedString(sortedList));
+            
+
+
+
+
+
+
+
+            // SEARCH MAIN
+
+            /*
             Console.WriteLine("Which integer are you searching for? :");
-            int searchingFor = int.Parse(Console.ReadLine());
+            long searchingFor = long.Parse(Console.ReadLine());
             
             var SortedForSearch = CreateSortedNumberList();
             Console.WriteLine(ElapsedTimeSearching(SequentialSearch,SortedForSearch,searchingFor));
-            
+            */
 
+
+
+            /* SEARCH CITY
+            Console.WriteLine("Which City are you searching for? :");
+            string searchingForString = Console.ReadLine();
+            
+            var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesUnsorted.txt");
+            Console.WriteLine(ElapsedTimeSearchingString(SequentialSearchString,convList,searchingForString));
+            */
 
 
 
