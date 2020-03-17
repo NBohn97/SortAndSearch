@@ -15,7 +15,16 @@ namespace SortAndSearch
             sw.Start();
             List<long> sortedList = mySortFunction(x);
             sw.Stop();
-            Console.WriteLine($"Time elapsed: {sw.Elapsed}");
+            
+            if (sw.Elapsed.TotalMilliseconds <= 30000)
+                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMilliseconds} ms");
+            else if (sw.Elapsed.TotalMilliseconds > 30000 && sw.Elapsed.TotalMilliseconds < 180000 )
+                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalSeconds} s");
+            else if (sw.Elapsed.TotalMilliseconds > 180000 && sw.Elapsed.TotalMilliseconds < 1.08e+7 )
+                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMinutes} m");
+            else if (sw.Elapsed.TotalMilliseconds > 1.08e+7 )
+                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalHours} h");
+            
             return sortedList;
         }
 
@@ -25,17 +34,17 @@ namespace SortAndSearch
             sw.Start();
             string result = mySearchFunction(sortedList,searchingFor);
             sw.Stop();
-            Console.WriteLine($"Time elapsed: {sw.Elapsed}");
+            Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMilliseconds} ms");
             return result;
         }
         
-        public static string ElapsedTimeSearchingString(Func<List<string>, string, string> mySearchFunction, List<string> sortedList, string searchingFor)
+        public static string ElapsedTimeSearching(Func<List<string>, string, string> mySearchFunction, List<string> sortedList, string searchingFor)
         {
             var sw = new Stopwatch();
             sw.Start();
             string result = mySearchFunction(sortedList,searchingFor);
             sw.Stop();
-            Console.WriteLine($"Time elapsed: {sw.Elapsed}");
+            Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMilliseconds} ms");
             return result;
         }
         
