@@ -7,7 +7,7 @@ namespace SortAndSearch
     {
         
         // Takes List and checks if sorted
-        public static bool IsSorted(List<int> randList)
+        public static bool IsSorted(List<long> randList)
         {
             for (var i = 0; i < randList.Count - 1; i++)
                 if (randList[i] >= randList[i + 1])
@@ -17,9 +17,9 @@ namespace SortAndSearch
         }
         
         // Uses Bubble Sort to sort a List
-        public static List<int> BubbleSort(List<int> unsortedList)
+        public static List<long> BubbleSort(List<long> unsortedList)
         {
-            var listCopy = new List<int>(unsortedList);
+            var listCopy = new List<long>(unsortedList);
             var x = listCopy.Count;
             for (var i = 0; i < x - 1; i++)
             for (var j = 0; j < x - i - 1; j++)
@@ -34,9 +34,9 @@ namespace SortAndSearch
         }
         
         // Optimized Bubble Sort to sort a list
-        public static List<int> BubbleSortOptimized(List<int> unsortedList)
+        public static List<long> BubbleSortOptimized(List<long> unsortedList)
         {
-            var listCopy = new List<int>(unsortedList);
+            var listCopy = new List<long>(unsortedList);
             var x = listCopy.Count;
             bool swap;
             for (var i = 0; i < x - 1; i++)
@@ -57,12 +57,11 @@ namespace SortAndSearch
             return listCopy;
         }
         
-        public static List<int> BogoSort(List<int> unsortedList)
+        public static List<long> BogoSort(List<long> unsortedList)
         {
-            var listCopy = new List<int>(unsortedList);
+            var listCopy = new List<long>(unsortedList);
             var rand = new Random();
-            var n = listCopy.Count;
-            
+
             while (!IsSorted(listCopy))
             {
                 for (var i = listCopy.Count - 1; i > 1; i--)
@@ -80,9 +79,9 @@ namespace SortAndSearch
         
         
 
-        public static List<int> BogoSortWithLog(List<int> unsortedList)
+        public static List<long> BogoSortWithLog(List<long> unsortedList)
         {
-            var listCopy = new List<int>(unsortedList);
+            var listCopy = new List<long>(unsortedList);
             var rand = new Random();
             var n = listCopy.Count;
 
@@ -114,7 +113,28 @@ namespace SortAndSearch
         
         
         
-        
+        public static List<string> BubbleSortOptimizedString(List<string> unsortedList)
+        {
+            var listCopy = new List<string>(unsortedList);
+            var x = listCopy.Count;
+            bool swap;
+            for (var i = 0; i < x - 1; i++)
+            {
+                swap = false;
+                for (var j = 0; j < x - i - 1; j++)
+                    if (listCopy[j][0] > listCopy[j + 1][0])
+                    {
+                        var temp = listCopy[j];
+                        listCopy[j] = listCopy[j + 1];
+                        listCopy[j + 1] = temp;
+                        swap = true;
+                    }
+
+                if (swap == false) break;
+            }
+
+            return listCopy;
+        }
         
     }
 }
