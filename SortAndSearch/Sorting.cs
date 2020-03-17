@@ -113,6 +113,11 @@ namespace SortAndSearch
         
         
         
+        
+        
+        
+        
+        /* NOT WORKING
         public static List<string> BubbleSortOptimizedString(List<string> unsortedList)
         {
             var listCopy = new List<string>(unsortedList);
@@ -129,12 +134,21 @@ namespace SortAndSearch
                         listCopy[j + 1] = temp;
                         swap = true;
                     }
+                    else if (listCopy[j][0] == listCopy[j + 1][0])
+                    {
+                        if (listCopy[j][1] > listCopy[j + 1][1]) ;
+                        var temp = listCopy[j];
+                        listCopy[j] = listCopy[j + 1];
+                        listCopy[j + 1] = temp;
+                        swap = true;
+                    }
+                
 
                 if (swap == false) break;
             }
 
             return listCopy;
         }
-        
+        */
     }
 }

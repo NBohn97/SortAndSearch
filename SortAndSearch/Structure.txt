@@ -1,6 +1,6 @@
 ﻿Main
     Menu
-        Choose List Unsorted / Sorted
+        Choose List Unsorted / Sorted AND Num / String
             Choose Search / Sort
                 Choose more than one Algorithm to compare
         Choose Create Text

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using static SortAndSearch.ListGen;
 using static SortAndSearch.Sorting;
 using static SortAndSearch.Performance;
@@ -36,17 +37,6 @@ namespace SortAndSearch
             */
             
             
-            // SORT STRING LIST
-
-            var sortedList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\SortString.txt");
-            PrintStringList(BubbleSortOptimizedString(sortedList));
-            
-
-
-
-
-
-
 
             // SEARCH MAIN
 
@@ -60,16 +50,18 @@ namespace SortAndSearch
 
 
 
-            /* SEARCH CITY
+            // SEARCH CITY SORTED SEQUENTIAL STRING
+            /*
             Console.WriteLine("Which City are you searching for? :");
             string searchingForString = Console.ReadLine();
             
-            var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesUnsorted.txt");
+            var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
             Console.WriteLine(ElapsedTimeSearchingString(SequentialSearchString,convList,searchingForString));
             */
 
-
-
+            List<long> generatedList = CreateSortedNumberList();
+            PrintList(generatedList);
+            
 
 
 

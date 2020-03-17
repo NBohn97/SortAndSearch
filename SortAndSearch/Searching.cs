@@ -22,7 +22,6 @@ namespace SortAndSearch
             }
             return $"Integer {intSearchedFor} not found in List.";
             
-            
         }
         
         // SequentialSearch With Strings
@@ -44,14 +43,35 @@ namespace SortAndSearch
         
         
         
-        public static long BinarySearch(List<long> sortedList)
+        public static string BinarySearch(List<long> sortedList)
         {
-            long x = 0;
+            
+            
+            
 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
-            return x;
+            return "";
             
         }
+
+
+        public static string BinarySearchString(List<String> sortedList)
+        {
+            return "";
+        }
+        
+        
+        
         
     }
 }
