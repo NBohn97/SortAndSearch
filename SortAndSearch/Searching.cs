@@ -7,45 +7,46 @@ namespace SortAndSearch
     {
 
         // SequentialSearch With Integers
-        public static string SequentialSearch(List<int> sortedList, int x)
+        public static string SequentialSearch(List<long> sortedList, long intSearchedFor)
         {
-
-
-            int searchInt = x;
-
-            for (int i = 0; i < sortedList.Count; i++)
+            
+            long index = 0;
+            
+            foreach (var num in sortedList)
             {
-                if (sortedList[i] == searchInt)
+                if (num == intSearchedFor)
                 {
-                    return $"Integer {searchInt} found at index {i}";
+                    return $"Integer {intSearchedFor} found at index {index}";
                 }
+                ++index;
             }
-            return $"Integer {searchInt} not found in List.";
-
+            return $"Integer {intSearchedFor} not found in List.";
+            
+            
         }
         
         // SequentialSearch With Strings
-        public static string SequentialSearch(List<string> sortedList, string x)
+        public static string SequentialSearchString(List<string> sortedList, string stringSearchedFor)
         {
+
+            long index = 0;
             
-            string searchString = x;
-
-            for (int i = 0; i < sortedList.Count; i++)
+            foreach (var word in sortedList)
             {
-                if (sortedList[i] == searchString)
+                if (word == stringSearchedFor)
                 {
-                    return $"String {searchString} found at index {i}";
+                    return $"Integer {stringSearchedFor} found at index {index}";
                 }
+                ++index;
             }
-            return $"String {searchString} not found in List.";
-
+            return $"Integer {stringSearchedFor} not found in List.";
         }
         
         
         
-        public static int BinarySearch(List<int> sortedList)
+        public static long BinarySearch(List<long> sortedList)
         {
-            int x = 0;
+            long x = 0;
 
 
             return x;
