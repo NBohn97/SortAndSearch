@@ -15,10 +15,44 @@ namespace SortThisShit
             return true;
         }
         
+        // Uses Bubble Sort to sort a List
+        public List<int> BubbleSort(List<int> unsortedList)
+        {
+            var x = unsortedList.Count;
+            for (var i = 0; i < x - 1; i++)
+            for (var j = 0; j < x - i - 1; j++)
+                if (unsortedList[j] > unsortedList[j + 1])
+                {
+                    var temp = unsortedList[j];
+                    unsortedList[j] = unsortedList[j + 1];
+                    unsortedList[j + 1] = temp;
+                }
+
+            return unsortedList;
+        }
         
-        
-        
-        
+        // Optimized Bubble Sort to sort a list
+        public List<int> BubbleSortOptimized(List<int> unsortedList)
+        {
+            var x = unsortedList.Count;
+            bool swap;
+            for (var i = 0; i < x - 1; i++)
+            {
+                swap = false;
+                for (var j = 0; j < x - i - 1; j++)
+                    if (unsortedList[j] > unsortedList[j + 1])
+                    {
+                        var temp = unsortedList[j];
+                        unsortedList[j] = unsortedList[j + 1];
+                        unsortedList[j + 1] = temp;
+                        swap = true;
+                    }
+
+                if (swap == false) break;
+            }
+
+            return unsortedList;
+        }
         
         
         
