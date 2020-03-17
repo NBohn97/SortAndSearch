@@ -21,6 +21,7 @@ namespace SortAndSearch
                 int firstChoice = ChooseFirst();
                 ChooseSecond(firstChoice);
 
+                Console.WriteLine("-------------------------------------");
                 Console.WriteLine("Restart? (y)es (n)o:");
                 string x = Console.ReadLine();
                 restart = x == "y" || x == "yes";
@@ -47,8 +48,8 @@ namespace SortAndSearch
             {
                 Console.WriteLine("(1) Sort");
                 Console.WriteLine("(2) Search");
-
-                selection = int.Parse(Console.ReadLine());
+                
+                selection = GetInput(1,2);
 
             }
             
@@ -73,22 +74,27 @@ namespace SortAndSearch
                     Console.WriteLine("(3) BogoSort");
                     Console.WriteLine("(4) SelectionSort");
                     Console.WriteLine("(5) InsertionSort");
-                    selection2 = int.Parse(Console.ReadLine());
+                    selection2 = GetInput(1,5);
                     switch (selection2)
                     {
                         case 1:
+                            Console.WriteLine("[BUBBLE SORT]");
                             ElapsedTimeSorting(BubbleSort,generatedRandomList);
                             break;
                         case 2:
+                            Console.WriteLine("[BUBBLE SORT OPT.]");
                             ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
                             break;
                         case 3:
+                            Console.WriteLine("[BOGO SORT]");
                             ElapsedTimeSorting(BogoSort,generatedRandomList);
                             break;
                         case 4:
+                            Console.WriteLine("[SELECTION SORT]");
                             ElapsedTimeSorting(SelectionSort,generatedRandomList);
                             break;
                         case 5:
+                            Console.WriteLine("[INSERTION SORT]");
                             ElapsedTimeSorting(InsertionSort,generatedRandomList);
                             break;
                         default:
@@ -102,27 +108,38 @@ namespace SortAndSearch
                     Console.WriteLine("(3) BogoSort");
                     Console.WriteLine("(4) SelectionSort");
                     Console.WriteLine("(5) InsertionSort");
-                    Console.WriteLine("(9) BogoSort(LOG)");
-                    selection2 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("(6) BogoSort(LOG)");
+                    Console.WriteLine("(7) BogoSort(ENDLOG)");
+                    selection2 = GetInput(1,7);
                     switch (selection2)
                     {
                         case 1:
+                            Console.WriteLine("[BUBBLE SORT]");
                             ElapsedTimeSorting(BubbleSort,generatedRandomList);
                             break;
                         case 2:
+                            Console.WriteLine("[BUBBLE SORT OPT.]");
                             ElapsedTimeSorting(BubbleSortOptimized,generatedRandomList);
                             break;
                         case 3:
+                            Console.WriteLine("[BOGO SORT]");
                             ElapsedTimeSorting(BogoSort,generatedRandomList);
                             break;
                         case 4:
+                            Console.WriteLine("[SELECTION SORT]");
                             ElapsedTimeSorting(SelectionSort,generatedRandomList);
                             break;
                         case 5:
+                            Console.WriteLine("[INSERTION SORT]");
                             ElapsedTimeSorting(InsertionSort,generatedRandomList);
                             break;
-                        case 9:
+                        case 6:
+                            Console.WriteLine("[BOGO SORT]");
                             ElapsedTimeSorting(BogoSortWithLog,generatedRandomList);
+                            break;
+                        case 7:
+                            Console.WriteLine("[BOGO SORT]");
+                            ElapsedTimeSorting(BogoSortWithLogLight,generatedRandomList);
                             break;
                         default:
                             Console.WriteLine("ERROR");
@@ -136,14 +153,14 @@ namespace SortAndSearch
                     Console.WriteLine("Search Integers or String?");
                     Console.WriteLine("(1) Integer ");
                     Console.WriteLine("(2) String ");
-                    selection2 = int.Parse(Console.ReadLine());
+                    selection2 = GetInput(1,2);
                     switch (selection2)
                     {
                         case 1:
                             // need to randomize ascending list from CreateSortedNumbersList();
                             List<long> generatedList = CreateSortedNumberList();
                             Console.WriteLine("Enter Integer you are searching for");
-                            int searchingFor = int.Parse(Console.ReadLine());
+                            int searchingFor = GetInput(-2147483648, 2147483647);
                             
                             Console.WriteLine("------------------------------");
                             Console.WriteLine("Sequential Search: ");
@@ -153,12 +170,12 @@ namespace SortAndSearch
                             break;
                         case 2:
                             Console.WriteLine("Which City are you searching for? (~ 3.2 million Cities) :");
-                            string searchingForString = Console.ReadLine();
+                            string searchingForString = Console.ReadLine().ToLower();
                             //var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
                             var convList = TxtToStringList("..\\..\\..\\CitiesSorted.txt");
                             Console.WriteLine("Sequential Search:");
-                            Console.WriteLine(ElapsedTimeSearchingString(SequentialSearch,convList,searchingForString));
-                            Console.WriteLine(ElapsedTimeSearchingString(BinarySearch,convList,searchingForString));
+                            Console.WriteLine(ElapsedTimeSearching(SequentialSearch,convList,searchingForString));
+                            Console.WriteLine(ElapsedTimeSearching(BinarySearch,convList,searchingForString));
                             break;
                         default:
                             Console.WriteLine("ERROR");
@@ -170,6 +187,30 @@ namespace SortAndSearch
             
             
         }
+
+        public static int GetInput(int low, int high)
+        {
+            int testedInput;
+            bool success = false;
+            bool range = false;
+            do
+            {
+                var input = Console.ReadLine();
+                success = int.TryParse(input, out testedInput);
+                if (testedInput >= low && testedInput <= high)
+                    range = true;
+
+                if (!success)
+                    Console.WriteLine("Input couldn't be converted to valid Integer. Please try again:");
+                else if (!range)
+                    Console.WriteLine("Value out of range. Try another Number:");
+            } while (!success || !range);
+
+            return testedInput;
+        }
+        
+        
+        
         
     }
     
