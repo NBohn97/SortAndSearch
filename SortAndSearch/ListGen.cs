@@ -9,12 +9,12 @@ namespace SortAndSearch
         
         // Creates a List filled with n distinct random (unsorted) values
         // uses User input for amount of numbers
-        public static List<int> CreateRandomNumberList()
+        public static List<long> CreateRandomNumberList()
         {
-            var numberlist = new List<int>();
+            var numberlist = new List<long>();
 
             Console.WriteLine("Enter amount of numbers");
-            var amount = int.Parse(Console.ReadLine());
+            var amount = long.Parse(Console.ReadLine());
 
             // Fill List
             for (var i = 0; i < amount; i++) numberlist.Add(i);
@@ -34,12 +34,12 @@ namespace SortAndSearch
             return numberlist;
         }
 
-        public static List<int> CreateSortedNumberList()
+        public static List<long> CreateSortedNumberList()
         {
-            var numberlist = new List<int>();
+            var numberlist = new List<long>();
 
             Console.WriteLine("Enter amount of numbers");
-            var amount = int.Parse(Console.ReadLine());
+            var amount = long.Parse(Console.ReadLine());
 
             // Fill List
             for (var i = 0; i < amount; i++) numberlist.Add(i);
@@ -127,21 +127,43 @@ namespace SortAndSearch
         
         
         
-        // Takes a path to a txt file and converts back to list
-        public static List<int> TxtToList(string path)
+        // Takes a path to a txt file and converts back to Int list
+        public static List<long> TxtToIntList(string path)
         {
             string line;
-            var numList = new List<int>();
+            var numList = new List<long>();
             var file = new StreamReader(path);
 
-            while ((line = file.ReadLine()) != null) numList.Add(int.Parse(line));
+            while ((line = file.ReadLine()) != null) numList.Add(long.Parse(line));
 
             return numList;
         }
         
+        // Takes a path to a txt file and converts back to String list
+        public static List<string> TxtToStringList(string path)
+        {
+            string line;
+            var wordList = new List<string>();
+            var file = new StreamReader(path);
+
+            while ((line = file.ReadLine()) != null) wordList.Add(line.ToLower());
+
+            return wordList;
+        }
+        
         
         // Prints list values to console
-        public static void PrintList(List<int> list)
+        public static void PrintList(List<long> list)
+        {
+            foreach (var num in list)
+            {
+                Console.Write(num);
+                Console.Write("|");
+            }
+            Console.Write("\n");
+        }
+        
+        public static void PrintStringList(List<string> list)
         {
             foreach (var num in list)
             {
