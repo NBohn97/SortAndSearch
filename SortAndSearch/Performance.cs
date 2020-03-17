@@ -19,11 +19,11 @@ namespace SortAndSearch
             if (sw.Elapsed.TotalMilliseconds <= 30000)
                 Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMilliseconds} ms");
             else if (sw.Elapsed.TotalMilliseconds > 30000 && sw.Elapsed.TotalMilliseconds < 180000 )
-                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalSeconds} s");
+                Console.WriteLine($"Time elapsed: {Math.Round(sw.Elapsed.TotalSeconds,2)} s");
             else if (sw.Elapsed.TotalMilliseconds > 180000 && sw.Elapsed.TotalMilliseconds < 1.08e+7 )
-                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMinutes} m");
+                Console.WriteLine($"Time elapsed: {Math.Round(sw.Elapsed.TotalMinutes,2)} m");
             else if (sw.Elapsed.TotalMilliseconds > 1.08e+7 )
-                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalHours} h");
+                Console.WriteLine($"Time elapsed: {Math.Round(sw.Elapsed.TotalHours,2)} h");
             
             return sortedList;
         }
