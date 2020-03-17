@@ -7,7 +7,7 @@ namespace SortThisShit
     public class ListGen
     {
         
-        // Creates a List filled with n random (unsorted) values
+        // Creates a List filled with n distinct random (unsorted) values
         // uses User input for amount of numbers
         public static List<int> CreateRandomNumberList()
         {
