@@ -23,7 +23,7 @@ namespace SortAndSearch
 
                 Console.WriteLine("Restart? (y)es (n)o:");
                 string x = Console.ReadLine();
-                restart = x == "y";
+                restart = x == "y" || x == "yes";
 
             }
             
@@ -72,6 +72,7 @@ namespace SortAndSearch
                     Console.WriteLine("(2) BubbleSort Optimized");
                     Console.WriteLine("(3) BogoSort");
                     Console.WriteLine("(4) SelectionSort");
+                    Console.WriteLine("(5) InsertionSort");
                     selection2 = int.Parse(Console.ReadLine());
                     switch (selection2)
                     {
@@ -87,6 +88,9 @@ namespace SortAndSearch
                         case 4:
                             ElapsedTimeSorting(SelectionSort,generatedRandomList);
                             break;
+                        case 5:
+                            ElapsedTimeSorting(InsertionSort,generatedRandomList);
+                            break;
                         default:
                             Console.WriteLine("ERROR");
                             break;
@@ -97,6 +101,7 @@ namespace SortAndSearch
                     Console.WriteLine("(2) BubbleSort Optimized");
                     Console.WriteLine("(3) BogoSort");
                     Console.WriteLine("(4) SelectionSort");
+                    Console.WriteLine("(5) InsertionSort");
                     Console.WriteLine("(9) BogoSort(LOG)");
                     selection2 = int.Parse(Console.ReadLine());
                     switch (selection2)
@@ -112,6 +117,9 @@ namespace SortAndSearch
                             break;
                         case 4:
                             ElapsedTimeSorting(SelectionSort,generatedRandomList);
+                            break;
+                        case 5:
+                            ElapsedTimeSorting(InsertionSort,generatedRandomList);
                             break;
                         case 9:
                             ElapsedTimeSorting(BogoSortWithLog,generatedRandomList);

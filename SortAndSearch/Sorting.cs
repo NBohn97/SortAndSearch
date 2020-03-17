@@ -61,7 +61,7 @@ namespace SortAndSearch
 
         
         
-
+        // uses SelectionSort to sort List of integers
         public static List<long> SelectionSort(List<long> unsortedList)
         {
             var listCopy = new List<long>(unsortedList);
@@ -87,14 +87,59 @@ namespace SortAndSearch
             return listCopy;
 
         }
+
+        // unfinished RadixSort
+        public static List<long> RadixSort(List<long> unsortedList)
+        {
+            int i = 0;
+            List <string> RadixList = new List<string>();
+            foreach (var num in unsortedList)
+            {
+                RadixList[i] = num.ToString();
+            }
+            // TBC
+            return unsortedList;
+        }
+
+        // uses InsertionSort to sort list of integers
+        public static List<long> InsertionSort(List<long> unsortedList)
+        {
+            var listCopy = new List<long>(unsortedList);
+
+            for (int i = 0; i < listCopy.Count; i++)
+            {
+                long temp = listCopy[i];
+                int j = i;
+
+                while (j > 0 && temp < listCopy[j - 1])
+                {
+                    listCopy[j] = listCopy[j - 1];
+                    j = j - 1;
+                    
+                }
+                listCopy[j] = temp;
+            }
+            
+            //Console.WriteLine(IsSorted(listCopy));
+            return listCopy;
+        }
+
         
+        public static List<long> QuickSort(List<long> unsortedList)
+        {
+            return unsortedList;
+        }
         
+        public static List<long> MergeSort(List<long> unsortedList)
+        {
+            return unsortedList;
+        }
         
-        
-        
-        
-        
-        
+        public static List<long> HeapSort(List<long> unsortedList)
+        {
+            return unsortedList;
+        }
+
         
         
         
