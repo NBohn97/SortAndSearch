@@ -53,19 +53,17 @@ namespace SortAndSearch
         public static void ChooseSecond(int selection1)
         {
             int selection2;
+            int selection3;
 
             switch (selection1)
             {
                 case 1:
                     var generatedRandomList = CreateRandomNumberList();
-                    Console.WriteLine("-------------------------------------");
-                    Console.WriteLine("Choose Sorting Algorithm 1");
-                    Console.WriteLine("(1) BubbleSort");
-                    Console.WriteLine("(2) BubbleSort Optimized");
-                    Console.WriteLine("(3) BogoSort");
-                    Console.WriteLine("(4) SelectionSort");
-                    Console.WriteLine("(5) InsertionSort");
+
+                    SortMenu(1);
                     selection2 = GetInput(1, 5);
+                    SortMenu(2);
+                    selection3 = GetInput(1, 7);
                     switch (selection2)
                     {
                         case 1:
@@ -92,18 +90,9 @@ namespace SortAndSearch
                             Console.WriteLine("ERROR");
                             break;
                     }
-
-                    Console.WriteLine("-------------------------------------");
-                    Console.WriteLine("Choose Sorting Algorithm 2");
-                    Console.WriteLine("(1) BubbleSort");
-                    Console.WriteLine("(2) BubbleSort Optimized");
-                    Console.WriteLine("(3) BogoSort");
-                    Console.WriteLine("(4) SelectionSort");
-                    Console.WriteLine("(5) InsertionSort");
-                    Console.WriteLine("(6) BogoSort(LOG)");
-                    Console.WriteLine("(7) BogoSort(ENDLOG)");
-                    selection2 = GetInput(1, 7);
-                    switch (selection2)
+                    
+                    
+                    switch (selection3)
                     {
                         case 1:
                             Console.WriteLine("[BUBBLE SORT]");
@@ -222,5 +211,22 @@ namespace SortAndSearch
 
             return testedInput;
         }
+
+        public static void SortMenu(int x)
+        {
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine($"Choose Sorting Algorithm {x}");
+            Console.WriteLine("(1) BubbleSort");
+            Console.WriteLine("(2) BubbleSort Optimized");
+            Console.WriteLine("(3) BogoSort");
+            Console.WriteLine("(4) SelectionSort");
+            Console.WriteLine("(5) InsertionSort");
+            Console.WriteLine("(6) BogoSort(LOG)");
+            Console.WriteLine("(7) BogoSort(ENDLOG)");
+            Console.WriteLine("(8) QuickSort");
+            
+        }
+        
+        
     }
 }
