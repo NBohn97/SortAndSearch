@@ -60,10 +60,13 @@ namespace SortAndSearch
                 case 1:
                     var generatedRandomList = CreateRandomNumberList();
 
+                    // Select the two algorithms
                     SortMenu(1);
                     selection2 = GetInput(1, 5);
                     SortMenu(2);
                     selection3 = GetInput(1, 7);
+                    
+                    // First algorithm
                     switch (selection2)
                     {
                         case 1:
@@ -91,7 +94,7 @@ namespace SortAndSearch
                             break;
                     }
                     
-                    
+                    // Second algorithm
                     switch (selection3)
                     {
                         case 1:
@@ -126,15 +129,10 @@ namespace SortAndSearch
                             Console.WriteLine("ERROR");
                             break;
                     }
-
-
                     break;
 
                 case 2:
-                    Console.WriteLine("Search Integers or String?");
-                    Console.WriteLine("(1) Integer");
-                    Console.WriteLine("(2) String");
-                    Console.WriteLine("(3) Integer (CONTAINS ALL INTEGERS IN RANGE)");
+                    SearchMenu();
                     selection2 = GetInput(1, 3);
                     switch (selection2)
                     {
@@ -151,6 +149,25 @@ namespace SortAndSearch
                             Console.WriteLine(ElapsedTimeSearching(BinarySearch, generatedList, searchingFor));
                             break;
                         case 2:
+                            
+                            // need to randomize ascending list from CreateSortedNumbersList();
+                            var generatedList2 = CreateSortedNumberList();
+                            Console.WriteLine("Enter Integer you are searching for");
+                            var searchingFor2 = GetInput(-2147483648, 2147483647);
+
+                            Console.WriteLine("-------------------------------------");
+                            Console.WriteLine("Sequential Search: ");
+                            Console.WriteLine(ElapsedTimeSearching(SequentialSearch, generatedList2, searchingFor2));
+                            Console.WriteLine("Binary Search: ");
+                            Console.WriteLine(ElapsedTimeSearching(BinarySearch, generatedList2, searchingFor2));
+                            break;
+                        default:
+                            Console.WriteLine("ERROR");
+                            break;
+                            
+                            
+                            
+                        case 3:
                             Console.WriteLine("Which City are you searching for? (~ 3.2 million Cities) :");
                             var searchingForString = Console.ReadLine().ToLower();
                             //var convList = TxtToStringList("C:\\Solutions\\SortThisShit\\SortAndSearch\\CitiesSorted.txt");
@@ -169,21 +186,6 @@ namespace SortAndSearch
                             Console.WriteLine("-------------------------------------");
                             Console.WriteLine("Binary Search:");
                             Console.WriteLine(ElapsedTimeSearching(BinarySearch, convList, searchingForString));
-                            break;
-                        case 3:
-                            // need to randomize ascending list from CreateSortedNumbersList();
-                            var generatedList2 = CreateSortedNumberList();
-                            Console.WriteLine("Enter Integer you are searching for");
-                            var searchingFor2 = GetInput(-2147483648, 2147483647);
-
-                            Console.WriteLine("-------------------------------------");
-                            Console.WriteLine("Sequential Search: ");
-                            Console.WriteLine(ElapsedTimeSearching(SequentialSearch, generatedList2, searchingFor2));
-                            Console.WriteLine("Binary Search: ");
-                            Console.WriteLine(ElapsedTimeSearching(BinarySearch, generatedList2, searchingFor2));
-                            break;
-                        default:
-                            Console.WriteLine("ERROR");
                             break;
                     }
 
@@ -224,7 +226,14 @@ namespace SortAndSearch
             Console.WriteLine("(6) BogoSort(LOG)");
             Console.WriteLine("(7) BogoSort(ENDLOG)");
             Console.WriteLine("(8) QuickSort");
-            
+        }
+
+        public static void SearchMenu()
+        {
+            Console.WriteLine("Search Integers or String?");
+            Console.WriteLine("(1) Random Integers");
+            Console.WriteLine("(2) Consecutive Integers");
+            Console.WriteLine("(3) String (City name)");
         }
         
         
