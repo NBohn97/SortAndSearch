@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using static SortAndSearch.ListGen;
+
 
 namespace SortAndSearch
 {
     public static class Sorting
     {
         // Takes List and checks if sorted
-        public static bool IsSorted(List<long> randList)
+        public static bool IsSorted(List<int> randList)
         {
             for (var i = 0; i < randList.Count - 1; i++)
                 if (randList[i] >= randList[i + 1])
@@ -17,9 +20,9 @@ namespace SortAndSearch
         }
 
         // Uses Bubble Sort to sort a List
-        public static List<long> BubbleSort(List<long> unsortedList)
+        public static List<int> BubbleSort(List<int> unsortedList)
         {
-            var listCopy = new List<long>(unsortedList);
+            var listCopy = new List<int>(unsortedList);
             var x = listCopy.Count;
             for (var i = 0; i < x - 1; i++)
             for (var j = 0; j < x - i - 1; j++)
@@ -35,9 +38,9 @@ namespace SortAndSearch
         }
 
         // Optimized Bubble Sort to sort a list
-        public static List<long> BubbleSortOptimized(List<long> unsortedList)
+        public static List<int> BubbleSortOptimized(List<int> unsortedList)
         {
-            var listCopy = new List<long>(unsortedList);
+            var listCopy = new List<int>(unsortedList);
             var x = listCopy.Count;
             bool swap;
             for (var i = 0; i < x - 1; i++)
@@ -61,9 +64,9 @@ namespace SortAndSearch
 
 
         // uses SelectionSort to sort List of integers
-        public static List<long> SelectionSort(List<long> unsortedList)
+        public static List<int> SelectionSort(List<int> unsortedList)
         {
-            var listCopy = new List<long>(unsortedList);
+            var listCopy = new List<int>(unsortedList);
             var n = listCopy.Count;
 
             for (var j = n - 1; j > 0; j--)
@@ -83,7 +86,7 @@ namespace SortAndSearch
         }
 
         // unfinished RadixSort
-        public static List<long> RadixSort(List<long> unsortedList)
+        public static List<int> RadixSort(List<int> unsortedList)
         {
             var i = 0;
             var RadixList = new List<string>();
@@ -93,9 +96,9 @@ namespace SortAndSearch
         }
 
         // uses InsertionSort to sort list of integers
-        public static List<long> InsertionSort(List<long> unsortedList)
+        public static List<int> InsertionSort(List<int> unsortedList)
         {
-            var listCopy = new List<long>(unsortedList);
+            var listCopy = new List<int>(unsortedList);
 
             for (var i = 0; i < listCopy.Count; i++)
             {
@@ -114,27 +117,47 @@ namespace SortAndSearch
             //Console.WriteLine(IsSorted(listCopy));
             return listCopy;
         }
+        
+        public static List<T> Quicksort<T>(List<T> unsortedList,Random rand) where T: IComparable {
+            if (unsortedList.Count() < 2) 
+                return unsortedList;
+            
+            var pivot = rand.Next(unsortedList.Count());
+            var val = unsortedList[pivot];
+            var smaller = new List<T>();
+            var bigger = new List<T>();
+            
+            for (int i = 0; i < unsortedList.Count(); i++) {
+                if (i != pivot) {
+                    if (unsortedList[i].CompareTo(val) < 0) {
+                        smaller.Add(unsortedList[i]);
+                    }
+                    else {
+                        bigger.Add(unsortedList[i]);
+                    }
+                }
+            }
 
-
-        public static List<long> QuickSort(List<long> unsortedList)
+            var sorted = Quicksort(smaller,rand);
+            sorted.Add(val);
+            sorted.AddRange(Quicksort(bigger,rand));
+            return sorted;
+        }
+        
+        public static List<int> MergeSort(List<int> unsortedList)
         {
             return unsortedList;
         }
 
-        public static List<long> MergeSort(List<long> unsortedList)
-        {
-            return unsortedList;
-        }
-
-        public static List<long> HeapSort(List<long> unsortedList)
+        public static List<int> HeapSort(List<int> unsortedList)
         {
             return unsortedList;
         }
 
 
-        public static List<long> BogoSort(List<long> unsortedList)
+        public static List<int> BogoSort(List<int> unsortedList)
         {
-            var listCopy = new List<long>(unsortedList);
+            var listCopy = new List<int>(unsortedList);
             var rand = new Random();
 
             while (!IsSorted(listCopy))
@@ -151,9 +174,9 @@ namespace SortAndSearch
         }
 
 
-        public static List<long> BogoSortWithLog(List<long> unsortedList)
+        public static List<int> BogoSortWithLog(List<int> unsortedList)
         {
-            var listCopy = new List<long>(unsortedList);
+            var listCopy = new List<int>(unsortedList);
             var rand = new Random();
             var n = listCopy.Count;
 
@@ -178,9 +201,9 @@ namespace SortAndSearch
             return listCopy;
         }
 
-        public static List<long> BogoSortWithLogLight(List<long> unsortedList)
+        public static List<int> BogoSortWithLogLight(List<int> unsortedList)
         {
-            var listCopy = new List<long>(unsortedList);
+            var listCopy = new List<int>(unsortedList);
             var rand = new Random();
             var n = listCopy.Count;
 
