@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace SortAndSearch
 {
     public static class Performance
     {
         // Uses a Sort Function and A List as Input. Returns sorted List and returns time elapsed on function
-        public static List<long> ElapsedTimeSorting(Func<List<long>, List<long>> mySortFunction, List<long> x)
+        public static List<int> ElapsedTimeSorting(Func<List<int>, List<int>> mySortFunction, List<int> x)
         {
             var sw = new Stopwatch();
             sw.Start();
@@ -26,8 +27,8 @@ namespace SortAndSearch
             return sortedList;
         }
 
-        public static string ElapsedTimeSearching(Func<List<long>, long, string> mySearchFunction,
-            List<long> sortedList, long searchingFor)
+        public static string ElapsedTimeSearching(Func<List<int>, int, string> mySearchFunction,
+            List<int> sortedList, int searchingFor)
         {
             var sw = new Stopwatch();
             sw.Start();

@@ -6,9 +6,9 @@ namespace SortAndSearch
     public static class Searching
     {
         // SequentialSearch With Integers
-        public static string SequentialSearch(List<long> sortedList, long intSearchedFor)
+        public static string SequentialSearch(List<int> sortedList, int intSearchedFor)
         {
-            long index = 0;
+            int index = 0;
 
             foreach (var num in sortedList)
             {
@@ -35,7 +35,7 @@ namespace SortAndSearch
 
 
         // BinarySearch with Integers
-        public static string BinarySearch(List<long> sortedList, long intSearchedFor)
+        public static string BinarySearch(List<int> sortedList, int intSearchedFor)
         {
             var upperBound = sortedList.Count - 1;
             var lowerBound = 0;

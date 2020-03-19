@@ -9,9 +9,9 @@ namespace SortAndSearch
     {
         // Creates a List filled with n distinct random (unsorted) values
         // uses User input for amount of numbers
-        public static List<long> CreateRandomNumberList()
+        public static List<int> CreateRandomNumberList()
         {
-            var numberlist = new List<long>();
+            var numberlist = new List<int>();
 
             Console.WriteLine("Enter amount of numbers in random List:");
             var amount = GetInput(-2147483648, 2147483647);
@@ -38,9 +38,9 @@ namespace SortAndSearch
             return numberlist;
         }
 
-        public static List<long> CreateSortedNumberList()
+        public static List<int> CreateSortedNumberList()
         {
-            var numberlist = new List<long>();
+            var numberlist = new List<int>();
 
             Console.WriteLine("Enter amount of numbers in List");
             var amount = GetInput(-2147483648, 2147483647);
@@ -50,9 +50,9 @@ namespace SortAndSearch
             return numberlist;
         }
 
-        public static List<long> CreateSortedNumberListV2()
+        public static List<int> CreateSortedNumberListV2()
         {
-            var numberlist = new List<long>();
+            var numberlist = new List<int>();
 
             Console.WriteLine("Enter amount of numbers in List");
             var amount = GetInput(-2147483648, 2147483647);
@@ -128,13 +128,13 @@ namespace SortAndSearch
 
 
         // Takes a path to a txt file and converts back to Int list
-        public static List<long> TxtToIntList(string path)
+        public static List<int> TxtToIntList(string path)
         {
             string line;
-            var numList = new List<long>();
+            var numList = new List<int>();
             var file = new StreamReader(path);
 
-            while ((line = file.ReadLine()) != null) numList.Add(long.Parse(line));
+            while ((line = file.ReadLine()) != null) numList.Add(int.Parse(line));
 
             return numList;
         }
@@ -153,7 +153,7 @@ namespace SortAndSearch
 
 
         // Prints list values to console
-        public static void PrintList(List<long> list)
+        public static void PrintList(List<int> list)
         {
             foreach (var num in list)
             {
