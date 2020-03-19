@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using static SortAndSearch.ListGen;
 using static SortAndSearch.Sorting;
 using static SortAndSearch.Performance;
@@ -62,9 +65,9 @@ namespace SortAndSearch
 
                     // Select the two algorithms
                     SortMenu(1);
-                    selection2 = GetInput(1, 5);
+                    selection2 = GetInput(1, 8);
                     SortMenu(2);
-                    selection3 = GetInput(1, 7);
+                    selection3 = GetInput(1, 8);
                     
                     // First algorithm
                     switch (selection2)
@@ -88,6 +91,19 @@ namespace SortAndSearch
                         case 5:
                             Console.WriteLine("[INSERTION SORT]");
                             ElapsedTimeSorting(InsertionSort, generatedRandomList);
+                            break;
+                        case 6:
+                            Console.WriteLine("[BOGO SORT]");
+                            ElapsedTimeSorting(BogoSortWithLog, generatedRandomList);
+                            break;
+                        case 7:
+                            Console.WriteLine("[BOGO SORT]");
+                            ElapsedTimeSorting(BogoSortWithLogLight, generatedRandomList);
+                            break;
+                        case 8:
+                            Console.WriteLine("[QUICK SORT]");
+                            var listCopy = new List<int>(generatedRandomList);
+                            TempQuickSort(listCopy);
                             break;
                         default:
                             Console.WriteLine("ERROR");
@@ -124,6 +140,11 @@ namespace SortAndSearch
                         case 7:
                             Console.WriteLine("[BOGO SORT]");
                             ElapsedTimeSorting(BogoSortWithLogLight, generatedRandomList);
+                            break;
+                        case 8:
+                            Console.WriteLine("[QUICK SORT]");
+                            var listCopy = new List<int>(generatedRandomList);
+                            TempQuickSort(listCopy);
                             break;
                         default:
                             Console.WriteLine("ERROR");
@@ -234,6 +255,28 @@ namespace SortAndSearch
             Console.WriteLine("(1) Random Integers");
             Console.WriteLine("(2) Consecutive Integers");
             Console.WriteLine("(3) String (City name)");
+        }
+
+        public static void TempQuickSort(List<int> temp)
+        {
+            Random rand = new Random();
+                            
+            // TESTING
+            var sw = new Stopwatch();
+            sw.Start();
+            var quickly = Quicksort(temp, rand);
+            sw.Stop();
+            if (sw.Elapsed.TotalMilliseconds <= 30000)
+                Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMilliseconds} ms");
+            else if (sw.Elapsed.TotalMilliseconds > 30000 && sw.Elapsed.TotalMilliseconds < 180000)
+                Console.WriteLine($"Time elapsed: {Math.Round(sw.Elapsed.TotalSeconds, 2)} s");
+            else if (sw.Elapsed.TotalMilliseconds > 180000 && sw.Elapsed.TotalMilliseconds < 1.08e+7)
+                Console.WriteLine($"Time elapsed: {Math.Round(sw.Elapsed.TotalMinutes, 2)} m");
+            else if (sw.Elapsed.TotalMilliseconds > 1.08e+7)
+                Console.WriteLine($"Time elapsed: {Math.Round(sw.Elapsed.TotalHours, 2)} h");
+
+            
+            
         }
         
         
