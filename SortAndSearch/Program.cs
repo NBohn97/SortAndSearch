@@ -266,6 +266,7 @@ namespace SortAndSearch
             sw.Start();
             var quickly = Quicksort(temp, rand);
             sw.Stop();
+            //Console.WriteLine(IsSorted(quickly));
             if (sw.Elapsed.TotalMilliseconds <= 30000)
                 Console.WriteLine($"Time elapsed: {sw.Elapsed.TotalMilliseconds} ms");
             else if (sw.Elapsed.TotalMilliseconds > 30000 && sw.Elapsed.TotalMilliseconds < 180000)

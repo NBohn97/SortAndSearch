@@ -8,11 +8,11 @@ namespace SortAndSearch
     public static class Performance
     {
         // Uses a Sort Function and A List as Input. Returns sorted List and returns time elapsed on function
-        public static List<int> ElapsedTimeSorting(Func<List<int>, List<int>> mySortFunction, List<int> x)
+        public static void ElapsedTimeSorting(Func<List<int>, List<int>> mySortFunction, List<int> x)
         {
             var sw = new Stopwatch();
             sw.Start();
-            var sortedList = mySortFunction(x);
+            mySortFunction(x);
             sw.Stop();
 
             if (sw.Elapsed.TotalMilliseconds <= 30000)
@@ -24,7 +24,7 @@ namespace SortAndSearch
             else if (sw.Elapsed.TotalMilliseconds > 1.08e+7)
                 Console.WriteLine($"Time elapsed: {Math.Round(sw.Elapsed.TotalHours, 2)} h");
 
-            return sortedList;
+            
         }
 
         public static string ElapsedTimeSearching(Func<List<int>, int, string> mySearchFunction,
